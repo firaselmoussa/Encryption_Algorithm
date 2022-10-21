@@ -30,8 +30,10 @@ function RTE(stringToEncrypt){
     }
     
 
+    encrypted = {"Encrypted":encrypted.join(' '), "RTE_key":RTE_key}
+    console.log(encrypted)
     // return result
-    return encrypted.join(' ');
+    return encrypted;
     
 }//end of RTE function
 

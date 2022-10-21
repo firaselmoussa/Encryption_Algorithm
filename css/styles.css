@@ -24,7 +24,9 @@ header{
     flex-flow: wrap row;
     justify-content: space-evenly;
     align-items: center;
+    border-bottom: 1px solid white;
 }
+
 .logo{
     height: 100%;
     width: 20%;
@@ -35,10 +37,32 @@ header{
 }
 
 .logo h1 {
-    font-size: 45px;
+    font-size: 50px;
     letter-spacing: 20px;
 }
 
 .logo h5{
     letter-spacing: 10px;
+}
+
+header ul{
+    height:100%;
+    width:60%;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+header ul a {
+    text-decoration: none;
+}
+
+header ul a:hover {
+    filter: drop-shadow( 0 0 1px white);
+}
+
+header ul li{
+    list-style: none;
+    color: white;
 }

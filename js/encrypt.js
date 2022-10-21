@@ -9,6 +9,7 @@ function RTE(stringToEncrypt){
     let binaryToEncrypt = stringToBinary(stringToEncrypt);
 
 
+    // seperating binary result into segments of 2 bits
     let segments = binaryToEncrypt.match(/[\s\S]{1,2}/g) || [];
     
 
@@ -29,7 +30,6 @@ function RTE(stringToEncrypt){
         encrypted.push(decimalToHexadecimal(segment));
     }
     
-
     // Json format
     encrypted = {
                 "Encrypted":encrypted.join(' '), "RTE_key":RTE_key

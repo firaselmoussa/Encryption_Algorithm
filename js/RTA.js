@@ -48,9 +48,11 @@ function RTD(decrypt, RTE_key){
 
     console.log(decrypt, RTE_key)
 
-    let decrypted = [];
+    let decrypted = decrypt.split(' ');
+    console.log(decrypted)
     let x  = String(RTE_key).length;
 
+    return decrypted;
     
 }//end of RTD function
 

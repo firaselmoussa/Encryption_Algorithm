@@ -11,8 +11,8 @@ const decryption_result = document.getElementById('decryption_result');
 encrypt_btn.addEventListener('click', ()=>{
 
     encryption_result.innerHTML = 
-    `Encrypted: ${RTE(encrypt_input.value).Encrypted} <br> <br>
-    RTE_key: ${RTE(encrypt_input.value).RTE_key}`;
+    `Encrypted: ${RTD(encrypt_input.value).Encrypted} <br> <br>
+    RTE_key: ${RTD(encrypt_input.value).RTE_key}`;
 
 })
 

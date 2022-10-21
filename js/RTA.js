@@ -27,7 +27,8 @@ function RTE(stringToEncrypt){
         x > 0 ? x -=1 : x  = String(RTE_key).length - 1;
 
         // encryption equation
-        segment = (parseInt(segment) * RTE_key)+ parseInt(String(RTE_key).slice(x)) ;
+        // segment = (parseInt(segment)* RTE_key) + parseInt(String(RTE_key).slice(x));
+        segment = (parseInt(segment)) - parseInt(String(RTE_key).slice(x));
 
         // pushing hexa segments into result array
         encrypted.push(decimalToHexadecimal(segment));
@@ -68,18 +69,20 @@ function RTD(decrypt, RTE_key){
         x > 0 ? x -=1 : x  = String(RTE_key).length -1;
 
         // decryption equation
-        segment = Math.floor((parseInt(segment)+ parseInt(String(RTE_key).slice(x))) / RTE_key) ;
+        // segment = (parseInt(segment)+ parseInt(String(RTE_key).slice(x))) / RTE_key ;
+        segment = parseInt(segment) + parseInt(String(RTE_key).slice(x));
+
 
         // console.log(segment);
         // pushing string segments into result array
-        for(bit of String(segment)){
-            
-            // preventing bit overflow
-            if(parseInt(bit) > 1){
-                segment = String(segment).replace(bit, '1');
-            }
-        }
-            decrypted.push(segment);
+        // for(bit of String(segment)){
+        //     // preventing bit overflow
+        //     if(parseInt(bit) > 1){
+        //         segment = String(segment).replace(bit, '1');
+        //     }
+        // }
+        
+        decrypted.push(segment);
         
     }
 

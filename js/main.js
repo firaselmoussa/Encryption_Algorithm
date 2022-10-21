@@ -16,9 +16,9 @@ encrypt_btn.addEventListener('click', ()=>{
     let encrypted = RTE(encrypt_input.value);
 
     // rendering result
-    encryption_key.innerHTML = `<br> <br> RTE_key: <span class="green"> ${encrypted.RTE_key} <br> <br>`;
+    encryption_key.innerHTML = `<br> RTE_key: <span class="green"> ${encrypted.RTE_key} <br> <br>`;
     encryption_result.innerHTML = 
-    `Encrypted: <span class="red"> ${encrypted.Encrypted} </span>`;
+    `Encrypted: <p class="red limit-height"> ${encrypted.Encrypted} </p>`;
 
     // 
     decrypt_input.value = encrypted.Encrypted;
@@ -33,6 +33,6 @@ decrypt_btn.addEventListener('click', ()=>{
     let decrypted = RTD(decrypt_input.value, RTE_key_input.value);
 
     // rendering result
-    decryption_result.innerHTML = `Decrypted: ${decrypted}`
+    decryption_result.innerHTML = `Decrypted: <p class="green limit-height">${decrypted} </p>`
 
 })

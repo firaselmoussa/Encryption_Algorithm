@@ -42,12 +42,20 @@
     <div class="rte-rtd-div">
     <!-- ENCRYPTION -->
     <div class="encryption-div">
-        <label for="">Enter a string to encrypt: </label>
+        <label for="">Enter a string to encrypt : </label>
 
-        <input type="text" id="encrypt_input">
+        <br> <br>
+
+        <textarea name="" id="encrypt_input" cols="30" rows="10" placeholder="string to encrypt.."></textarea>
+
+        <br><br>
+
         <button id="encrypt_btn">encrypt</button>
+
         <br>
+
         <p id="encryption_key"></p>
+
         <p id="encryption_result"></p>
     </div>
 
@@ -55,10 +63,19 @@
 
     <!-- DECRYPTION -->
     <div class="decryption-div">
-        <input type="text" id="decrypt_input"> 
-        <input type="text" id="RTE_key_input">
+        <label for="">Decrypt (Auto filled) : </label>
+
+        <br><br>
+        <input type="text" id="RTE_key_input" placeholder="RTE_key..">
+        <br><br>
+        <textarea name="" id="decrypt_input" cols="30" rows="10" placeholder="string to decrypt.."></textarea>
+        
+        <br><br>
         <button id="decrypt_btn">decrypt</button>
+
+        <br><br>
         <p id="decryption_result"></p>
+
     </div>
 </div>
     </section>

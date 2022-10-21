@@ -9,9 +9,8 @@ function RTE(stringToEncrypt){
     // converting input to binary
     let binaryToEncrypt = stringToBinary(stringToEncrypt);
 
-
-    // seperating binary result into segments of 2 bits
-    let segments = binaryToEncrypt.match(/[\s\S]{1,2}/g) || [];
+    // spliting binary 
+    let segments = binaryToEncrypt.split(' ')
     
 
 // ENCREPTION
@@ -27,12 +26,10 @@ function RTE(stringToEncrypt){
         // encryption equation
         segment = (parseInt(segment) + parseInt(String(RTE_key).slice(x))) * RTE_key;
 
-        console.log(segment);
         // pushing hexa segments into result array
         encrypted.push(decimalToHexadecimal(segment));
     }
     
-    console.log(encrypted)
     // Json format
     encrypted = {
                 "Encrypted":encrypted.join(' '), "RTE_key":RTE_key
@@ -48,31 +45,36 @@ function RTE(stringToEncrypt){
 // takes a json object which is usually returned by RTE
 function RTD(decrypt, RTE_key){
 
-    
+    // reversing join(' ')
+    let decrypted = [];
 
     // reversing join(' ')
     let segments = decrypt.split(' ');
     
     // RTE_key length
     let x  = String(RTE_key).length;
-
     // segment decryption loop
     for(var segment of segments){
+
+        // reverse to decimal from hexa
+        segment = parseInt(segment, 16);
+
 
         // x index condition
         x > 0 ? x -=1 : x  = String(RTE_key).length - 1;
 
         // encryption equation
-        segment = (parseInt(segment) - parseInt(String(RTE_key).slice(x))) / RTE_key;
+        segment = Math.round(parseInt(segment) / RTE_key )- parseInt(String(RTE_key).slice(x));
 
-        console.log(segment);
-        // pushing hexa segments into result array
-        // encrypted.push(decimalToHexadecimal(segment));
+        // console.log(segment);
+        // pushing string segments into result array
+        decrypted.push(segment);
     }
 
-
+    // joinning & converting result to string
+    decrypted = binaryToString(decrypted.join(' '));
     // returning decryption
-    return segments;
+    return decrypted;
     
 }//end of RTD function
 

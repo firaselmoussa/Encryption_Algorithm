@@ -27,10 +27,12 @@ function RTE(stringToEncrypt){
         // encryption equation
         segment = (parseInt(segment) + parseInt(String(RTE_key).slice(x))) * RTE_key;
 
+        console.log(segment);
         // pushing hexa segments into result array
         encrypted.push(decimalToHexadecimal(segment));
     }
     
+    console.log(encrypted)
     // Json format
     encrypted = {
                 "Encrypted":encrypted.join(' '), "RTE_key":RTE_key
@@ -46,13 +48,31 @@ function RTE(stringToEncrypt){
 // takes a json object which is usually returned by RTE
 function RTD(decrypt, RTE_key){
 
-    console.log(decrypt, RTE_key)
+    
 
-    let decrypted = decrypt.split(' ');
-    console.log(decrypted)
+    // reversing join(' ')
+    let segments = decrypt.split(' ');
+    
+    // RTE_key length
     let x  = String(RTE_key).length;
 
-    return decrypted;
+    // segment decryption loop
+    for(var segment of segments){
+
+        // x index condition
+        x > 0 ? x -=1 : x  = String(RTE_key).length - 1;
+
+        // encryption equation
+        segment = (parseInt(segment) - parseInt(String(RTE_key).slice(x))) / RTE_key;
+
+        console.log(segment);
+        // pushing hexa segments into result array
+        // encrypted.push(decimalToHexadecimal(segment));
+    }
+
+
+    // returning decryption
+    return segments;
     
 }//end of RTD function
 

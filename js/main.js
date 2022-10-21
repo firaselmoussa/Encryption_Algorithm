@@ -19,6 +19,9 @@ encrypt_btn.addEventListener('click', ()=>{
     `Encrypted: ${encrypted.Encrypted} <br> <br>
     RTE_key: ${encrypted.RTE_key}`;
 
+    // 
+    decrypt_input.value = encrypted.Encrypted;
+    RTE_key_input.value = encrypted.RTE_key;
 })
 
 

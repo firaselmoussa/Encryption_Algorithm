@@ -32,8 +32,6 @@ decrypt_btn.addEventListener('click', ()=>{
     let decrypted = RTD(decrypt_input.value, RTE_key_input.value);
 
     // rendering result
-    decryption_result.innerHTML = 
-    `Encrypted: ${decrypted} <br> <br>
-    RTE_key: ${decrypted}`;
+    decryption_result.innerHTML = `Decrypted: ${decrypted}`
 
 })

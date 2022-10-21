@@ -4,6 +4,14 @@
     padding: 0;
 }
 
+.red{
+    color:red;
+}
+
+.green {
+    color: rgb(0, 200, 0);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -65,4 +73,30 @@ header ul a:hover {
 header ul li{
     list-style: none;
     color: white;
+}
+
+/* preview_section */
+
+#preview_section{
+    width:90vw;
+    margin-left: 5vw;
+    margin-top: 120px;
+}
+
+.rte-rtd-div{
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.encryption-div{
+    height:60vh;
+    width:46%;
+    border: 1px solid red;
+}
+
+.decryption-div {
+    height: 60vh;
+    width: 46%;
+    border: 1px solid red;
 }

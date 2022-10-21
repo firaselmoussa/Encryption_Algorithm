@@ -10,9 +10,13 @@ const decryption_result = document.getElementById('decryption_result');
 // 
 encrypt_btn.addEventListener('click', ()=>{
 
+    // encrypting input
+    let encrypted = RTE(encrypt_input.value);
+
+    // rendering result
     encryption_result.innerHTML = 
-    `Encrypted: ${RTD(encrypt_input.value).Encrypted} <br> <br>
-    RTE_key: ${RTD(encrypt_input.value).RTE_key}`;
+    `Encrypted: ${encrypted.Encrypted} <br> <br>
+    RTE_key: ${encrypted.RTE_key}`;
 
 })
 
@@ -20,8 +24,12 @@ encrypt_btn.addEventListener('click', ()=>{
 // 
 decrypt_btn.addEventListener('click', ()=>{
 
+    // decrypting input
+    let decrypted = RTD(encrypt_input.value);
+
+    // rendering result
     decryption_result.innerHTML = 
-    `Encrypted: ${RTE(decrypt_input.value).Encrypted} <br> <br>
-    RTE_key: ${RTE(decrypt_input.value).RTE_key}`;
+    `Encrypted: ${decrypted.Encrypted} <br> <br>
+    RTE_key: ${decrypted.RTE_key}`;
 
 })

@@ -43,43 +43,14 @@ function RTE(stringToEncrypt){
 
 
 // RANDOM TIMING DECRYPTION 
-function RTD(stringToEncrypt){
+// takes a json object which is usually returned by RTE
+function RTD(decrypt, RTE_key){
 
-    // RTE-key = current time in milliseconds + random number from -9 to 9
-    let RTE_key = Date.now() + Math.floor(Math.random() * ((9) - (-9) + 1) + (-9));
+    console.log(decrypt, RTE_key)
 
-    // converting input to binary
-    let binaryToEncrypt = stringToBinary(stringToEncrypt);
-
-
-    // seperating binary result into segments of 2 bits
-    let segments = binaryToEncrypt.match(/[\s\S]{1,2}/g) || [];
-    
-
-// ENCREPTION
-    let encrypted = [];
+    let decrypted = [];
     let x  = String(RTE_key).length;
 
-   // encryption loop
-    for(var segment of segments){
-
-        // x index condition
-        x > 0 ? x -=1 : x  = String(RTE_key).length - 1;
-
-        // encryption equation
-        segment = (parseInt(segment) + parseInt(String(RTE_key).slice(x))) * RTE_key;
-
-        // pushing hexa segments into result array
-        encrypted.push(decimalToHexadecimal(segment));
-    }
-    
-    // Json format
-    encrypted = {
-                "Encrypted":encrypted.join(' '), "RTE_key":RTE_key
-                };
-
-    // return result
-    return encrypted;
     
 }//end of RTD function
 

@@ -2,8 +2,8 @@
 // RANDOM TIMING ENCRYPTION 
 function RTE(stringToEncrypt){
 
-    // RTE-key
-    let RTE_key = Date.now();
+    // RTE-key = current time in milliseconds + random number from -9 to 9
+    let RTE_key = Date.now() + Math.floor(Math.random() * ((9) - (-9) + 1) + (-9));
 
     // converting input to binary
     let binaryToEncrypt = stringToBinary(stringToEncrypt);

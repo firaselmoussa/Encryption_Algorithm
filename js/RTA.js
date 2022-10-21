@@ -1,5 +1,7 @@
 // Random Timing Algorithms
 ///////////////////////////////////////////////////////////
+
+
 // RANDOM TIMING ENCRYPTION 
 function RTE(stringToEncrypt){
 
@@ -9,6 +11,7 @@ function RTE(stringToEncrypt){
     // converting input to binary
     let binaryToEncrypt = stringToBinary(stringToEncrypt);
 
+    console.log(binaryToEncrypt)
     // spliting binary 
     let segments = binaryToEncrypt.split(' ')
     
@@ -24,7 +27,7 @@ function RTE(stringToEncrypt){
         x > 0 ? x -=1 : x  = String(RTE_key).length - 1;
 
         // encryption equation
-        segment = (parseInt(segment) + parseInt(String(RTE_key).slice(x))) * RTE_key;
+        segment = (parseInt(segment) * RTE_key)+ parseInt(String(RTE_key).slice(x)) ;
 
         // pushing hexa segments into result array
         encrypted.push(decimalToHexadecimal(segment));
@@ -53,6 +56,7 @@ function RTD(decrypt, RTE_key){
     
     // RTE_key length
     let x  = String(RTE_key).length;
+
     // segment decryption loop
     for(var segment of segments){
 
@@ -61,18 +65,28 @@ function RTD(decrypt, RTE_key){
 
 
         // x index condition
-        x > 0 ? x -=1 : x  = String(RTE_key).length - 1;
+        x > 0 ? x -=1 : x  = String(RTE_key).length -1;
 
-        // encryption equation
-        segment = Math.round(parseInt(segment) / RTE_key )- parseInt(String(RTE_key).slice(x));
+        // decryption equation
+        segment = Math.floor((parseInt(segment)+ parseInt(String(RTE_key).slice(x))) / RTE_key) ;
 
         // console.log(segment);
         // pushing string segments into result array
-        decrypted.push(segment);
+        for(bit of String(segment)){
+            
+            // preventing bit overflow
+            if(parseInt(bit) > 1){
+                segment = String(segment).replace(bit, '1');
+            }
+        }
+            decrypted.push(segment);
+        
     }
 
+    console.log(decrypted.join(' '))
     // joinning & converting result to string
     decrypted = binaryToString(decrypted.join(' '));
+    
     // returning decryption
     return decrypted;
     

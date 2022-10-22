@@ -1,16 +1,24 @@
 // toggling algorithms preview
 const preview_select = document.getElementById('preview_select');
-const rte_rtd_html = document.getElementById('rte_rtd_html');
 const preview_sections = Object.values(document.getElementsByClassName('preview-section'));
 
 // initially display RTE & RTD
 rte_rtd_html.style.display = 'block';
 
+// hiding all
 preview_select.addEventListener('change', ()=>{
-    preview_sections.forEach(element => {
-        console.log(element)
-    });
-})
+
+    // displaying selected html if option not null
+    if(preview_select.value != ''){
+
+        preview_sections.forEach(element => {
+            element.style.display = 'none';
+        });
+
+        document.getElementById(preview_select.value).style.display = 'block';
+    };
+    
+});
 
 
 // RTE & RTD preview

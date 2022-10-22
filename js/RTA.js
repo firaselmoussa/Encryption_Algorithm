@@ -52,16 +52,29 @@ function RTMG(n){
     let generated_maze = document.createElement('div');
     generated_maze.classList.add('RTMG_maze');
 
+    // maze css
+    generated_maze.style.gridTemplateColumns = `repeat(${n}, 1fr)`;
+    generated_maze.style.gridTemplateRows = `repeat(${n}, 1fr)`;
+    generated_maze.style.width = 'fit-content';
+    generated_maze.style.height = 'fit-content';
+    generated_maze.style.display = 'grid';
+    generated_maze.style.gap = '2px';
 
     // creating & rendering points
     index_of_all_points.forEach(element => {
         var point = document.createElement('div');
         point.classList.add('RTMG_point');
         point.id = `RTMG_${element}_point`;
+
+        // point css
+        point.style.height = '20px';
+        point.style.aspectRatio = '1/1';
+        point.style.background = 'red';
+
+        // appending points in generated maze
         generated_maze.append(point);
         
     });
-
 
     // return result
     return generated_maze;

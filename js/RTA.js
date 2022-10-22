@@ -5,6 +5,13 @@
 // RANDOM TIMING MAZE GENERATOR
 function RTMG(n){
 
+    // calculating sample set
+    let sample_set = n*n;
+
+    // index arrays
+    let index_of_all_points = [];
+    let index_of_sides_points = [];
+
 }
 
 // RANDOM TIMING ENCRYPTION 

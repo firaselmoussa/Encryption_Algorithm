@@ -1,9 +1,13 @@
 // Random Timing Algorithms
 ///////////////////////////////////////////////////////////
 
-
+RTMG(10);
 // RANDOM TIMING MAZE GENERATOR
 function RTMG(n){
+
+    // using time in milliseconds to randomize the process
+    let RTMG_key = Date.now();
+
 
     n = parseInt(n);
 
@@ -35,7 +39,14 @@ function RTMG(n){
     // sorting array & filtering duplicates
     index_of_sides_points = [...new Set(index_of_sides_points.sort(function(a, b){return a - b}))];
 
-    console.log(index_of_sides_points);
+    // choose enterance points randomly
+    let enterance_point = index_of_sides_points[Math.round(Math.random() * (index_of_sides_points.length - 0) + 0)]; 
+
+    // removing enterance point to avoid choosing it as exit point
+    index_of_sides_points.splice(index_of_sides_points.indexOf(enterance_point), 1);
+
+    // choose enterance points randomly
+    let exit_point = index_of_sides_points[Math.round(Math.random() * (index_of_sides_points.length - 0) + 0)];
 
 
 }

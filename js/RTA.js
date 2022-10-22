@@ -5,12 +5,38 @@
 // RANDOM TIMING MAZE GENERATOR
 function RTMG(n){
 
+    n = parseInt(n);
+
     // calculating sample set
     let sample_set = n*n;
 
     // index arrays
     let index_of_all_points = [];
     let index_of_sides_points = [];
+
+    // inserting index of all points  
+    for(i = 0; i < sample_set; i++ ){
+        index_of_all_points.push(i)
+    }
+
+    // inserting TOP & BOTTOM side points indecies
+    for(i = 0; i < n; i++){
+        index_of_sides_points.push(index_of_all_points.indexOf(i));
+        index_of_sides_points.push(index_of_all_points.indexOf(i*10));
+        
+    }
+
+    // inserting LEFT & RIGHT side points indecies
+    for(i = n; i < n*n; i+=10){
+        index_of_sides_points.push(index_of_all_points.indexOf(i));
+        index_of_sides_points.push(index_of_all_points.indexOf(i-1));
+    }
+
+    // sorting array & filtering duplicates
+    index_of_sides_points = [...new Set(index_of_sides_points.sort(function(a, b){return a - b}))];
+
+    console.log(index_of_sides_points);
+
 
 }
 

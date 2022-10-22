@@ -112,21 +112,19 @@
             <!-- user input data below  -->
             <div class="rtmg-inputs">
 
-                <label for="rtmg_n">Enter n : </label>
-                <input type="number" id="rtmg_n" placeholder="Integer..">
+                <div>
+                    <label for="rtmg_n">Enter n : </label>
+                    <input type="number" id="rtmg_n" placeholder="Integer..">
 
-                <br><br>
-
-                <label for="">Show solution </label><input type="checkbox" id="rtmg_solution" value="show"/>
-
-                <br><br>
-
+                    <label for="">Show solution </label><input type="checkbox" id="rtmg_solution" value="show" />
+                </div>
+                
                 <button id="rtmg_btn" class="rta-btn">Generate</button>
 
             </div>
 
             <!-- generated maze will be rendered here -->
-            <div class="rtmg-result"></div>
+            <div class="rtmg-result" id="rtmg-result"></div>
 
         </div>
     

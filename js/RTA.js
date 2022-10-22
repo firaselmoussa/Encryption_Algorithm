@@ -58,18 +58,44 @@ function RTMG(n){
     generated_maze.style.width = 'fit-content';
     generated_maze.style.height = 'fit-content';
     generated_maze.style.display = 'grid';
-    generated_maze.style.gap = '2px';
 
     // creating & rendering points
     index_of_all_points.forEach(element => {
-        var point = document.createElement('div');
+
+        let point = document.createElement('div');
         point.classList.add('RTMG_point');
         point.id = `RTMG_${element}_point`;
 
         // point css
         point.style.height = '20px';
         point.style.aspectRatio = '1/1';
-        point.style.background = 'red';
+        point.style.border = '1px solid white';
+
+        let x = Math.round(Math.random()*10);
+
+        RTMG_key -= x;
+
+        if(RTMG_key % 2 == 0){
+            point.style.borderLeft = 'none';
+            if(x % 2 == 0){
+                point.style.borderTop = 'none';
+            }else{
+                point.style.borderRight = 'none';
+            }
+        }else{
+            point.style.borderBottom = 'none';
+        }
+
+        if(x > 4){
+            point.style.borderTop = 'none';
+            if(x % 2 == 0){
+                point.style.borderLeft = 'none';
+            }else{
+                point.style.borderBottom = 'none';
+            }
+        }else{
+            point.style.borderRight = 'none';
+        }
 
         // appending points in generated maze
         generated_maze.append(point);

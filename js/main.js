@@ -1,3 +1,14 @@
+// toggling algorithms preview
+const preview_select = document.getElementById('preview_select');
+// const preview_section = document.getElementById('preview_section');
+
+preview_select.addEventListener('change', ()=>{
+    console.log(preview_select.value);
+    // preview_section.innerHTML = ' '
+})
+
+
+// RTE & RTD preview
 const encrypt_btn = document.getElementById('encrypt_btn');
 const encrypt_input = document.getElementById('encrypt_input');
 const encryption_key = document.getElementById('encryption_key');

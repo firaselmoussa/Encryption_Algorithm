@@ -29,7 +29,7 @@
         <ul>
 
                 
-            <select class="form-control">
+            <select class="preview" id="preview_select">
                 <option value="preview">Preview</option>
                 <option value="rte-and-rtd">RTE & RTD</option>
                 <option value="rte-and-rtd">RTMG</option>
@@ -45,54 +45,57 @@
 
 
     <!-- Preview section -->
-    <section id="preview_section">
+    <section id="preview_sections_container">
 
-        <!-- <p>RTA is a library of Algorithms that uses Random timestamps formatted in milliseconds as their key.</p> -->
+    <div class="preview-section" id="rte-rtd-html">
 
-        <h1>RTE & RTD<h1>
-        <h4>Random Timing Encryption & Random Timing Decryption.</h6>
+            <h1>RTE & RTD<h1>
+            <h4>Random Timing Encryption & Random Timing Decryption.</h6>
 
-        <br><br>
-    <!-- ENCRYPTION  CONTAINER-->
-    <div class="rte-rtd-div">
-    <!-- ENCRYPTION -->
-    <div class="encryption-div">
-        <label for="encrypt">Enter a string to encrypt : </label>
+            <br><br>
+        <!-- ENCRYPTION  CONTAINER-->
+        <div class="rte-rtd-div">
+        <!-- ENCRYPTION -->
+        <div class="encryption-div">
+            <label for="encrypt">Enter a string to encrypt : </label>
 
-        <br> <br>
+            <br> <br>
 
-        <textarea name="encrypt" id="encrypt_input" cols="30" rows="10" placeholder="string to encrypt.."></textarea>
+            <textarea name="encrypt" id="encrypt_input" cols="30" rows="10" placeholder="string to encrypt.."></textarea>
 
-        <br><br>
+            <br><br>
 
-        <button id="encrypt_btn" class="rte-btn">Encrypt</button>
+            <button id="encrypt_btn" class="rte-btn">Encrypt</button>
 
-        <br>
+            <br>
 
-        <p id="encryption_key"></p>
+            <p id="encryption_key"></p>
 
-        <p id="encryption_result"></p>
+            <p id="encryption_result"></p>
+        </div>
+
+        <br><br> 
+
+        <!-- DECRYPTION -->
+        <div class="decryption-div">
+            <label for="decrypt">Decrypt (Auto filled) : </label>
+
+            <br><br>
+            <input type="text" id="RTE_key_input" placeholder="RTE_key..">
+            <br><br>
+            <textarea name="decrypt" id="decrypt_input" cols="30" rows="10" placeholder="string to decrypt.."></textarea>
+            
+            <br><br>
+            <button id="decrypt_btn" class="rtd-btn">Decrypt</button>
+
+            <br><br>
+            <p id="decryption_result"></p>
+
+        </div>
     </div>
 
-    <br><br> 
-
-    <!-- DECRYPTION -->
-    <div class="decryption-div">
-        <label for="decrypt">Decrypt (Auto filled) : </label>
-
-        <br><br>
-        <input type="text" id="RTE_key_input" placeholder="RTE_key..">
-        <br><br>
-        <textarea name="decrypt" id="decrypt_input" cols="30" rows="10" placeholder="string to decrypt.."></textarea>
-        
-        <br><br>
-        <button id="decrypt_btn" class="rtd-btn">Decrypt</button>
-
-        <br><br>
-        <p id="decryption_result"></p>
-
-    </div>
 </div>
+
     </section>
 
 

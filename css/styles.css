@@ -123,9 +123,9 @@ select option{
 }
 
 
-/* preview_section */
+/* preview_sections_containers_container */
 
-#preview_section{
+#preview_sections_container{
     width:90vw;
     margin-left: 5vw;
     margin-top: 120px;

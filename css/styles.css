@@ -19,17 +19,17 @@
     background: rgba(255, 255, 255, 0.08);
 }
 
-.limit-height::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 10px;
 }
 
-.limit-height::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.3);
     border: 1px solid white;
     border-radius: 5px;
 }
 
-.limit-height::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background-color: black;
     border: 1px solid white;
     border-radius: 20px;
@@ -189,4 +189,5 @@ textarea{
     margin-top: 1%;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: scroll;
 }

@@ -191,3 +191,11 @@ textarea{
     border: 1px solid rgba(255, 255, 255, 0.2);
     overflow: scroll;
 }
+
+.rtmg-inputs input{
+    width:80px;
+}
+
+.rtmg-inputs select{
+    height:25px
+}

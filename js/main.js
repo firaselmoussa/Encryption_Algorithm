@@ -10,22 +10,27 @@ preview_select.addEventListener('change', ()=>{
 
     // displaying selected html if option not null
     if(preview_select.value != ''){
-
         preview_sections.forEach(element => {
             element.style.display = 'none';
         });
-
         document.getElementById(preview_select.value).style.display = 'block';
     };
-    
 });
 
+// RTMG preview
+const rtmg_btn = document.getElementById('rtmg_btn');
+const rtmg_n = document.getElementById('rtmg_n');
+const rtmg_solution = document.getElementById('rtmg_solution');
+
+// generate maze
+rtmg_btn.addEventListener('click', ()=>{
+    RTMG(rtmg_n.value);
+})
 
 // RTE & RTD preview
 const encrypt_btn = document.getElementById('encrypt_btn');
 const encrypt_input = document.getElementById('encrypt_input');
 const encryption_key = document.getElementById('encryption_key');
-
 
 const decrypt_btn = document.getElementById('decrypt_btn');
 const decrypt_input = document.getElementById('decrypt_input');
@@ -47,7 +52,7 @@ encrypt_btn.addEventListener('click', ()=>{
     // 
     decrypt_input.value = encrypted.Encrypted;
     RTE_key_input.value = encrypted.RTE_key;
-})
+});
 
 
 // 
@@ -59,4 +64,4 @@ decrypt_btn.addEventListener('click', ()=>{
     // rendering result
     decryption_result.innerHTML = `Decrypted: <p class="green limit-height">${decrypted} </p>`
 
-})
+});

@@ -3,11 +3,10 @@
 
 
 // RANDOM TIMING MAZE GENERATOR
-function RTMG(height, width){
+function RTMG(height, width, shape){
 
     // using time in milliseconds to randomize the process
     let RTMG_key = Date.now();
-
 
     // n = parseInt(n);
 
@@ -61,6 +60,14 @@ function RTMG(height, width){
     generated_maze.style.width = 'fit-content';
     generated_maze.style.height = 'fit-content';
     generated_maze.style.display = 'grid';
+
+    if(shape == 'triangle'){
+        generated_maze.style.clipPath = 'polygon(50% 0%, 0% 100%, 100% 100%)';
+    }else if(shape == 'hexagon'){
+        generated_maze.style.clipPath = 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)';
+    }else if(shape == 'circle'){
+        generated_maze.style.clipPath = 'circle(50% at 50% 50%)';
+    }
 
     // creating & rendering points
     index_of_all_points.forEach(element => {

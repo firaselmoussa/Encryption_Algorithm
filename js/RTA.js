@@ -2,6 +2,11 @@
 ///////////////////////////////////////////////////////////
 
 
+// RANDOM TIMING MAZE GENERATOR
+function RTMG(n){
+
+}
+
 // RANDOM TIMING ENCRYPTION 
 function RTE(stringToEncrypt){
 

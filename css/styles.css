@@ -135,8 +135,8 @@ select option{
     display: none;
 }
 
-.rte-btn,
-.rtd-btn{
+.rta-btn,
+.rta-btn{
     padding: 3px 15px;
     background: black;
     color: white;
@@ -145,8 +145,8 @@ select option{
     cursor: pointer;
 }
 
-.rte-btn:hover,
-.rtd-btn:hover {
+.rta-btn:hover,
+.rta-btn:hover {
     filter: drop-shadow(0 0 1px);
 }
 
@@ -158,7 +158,8 @@ select option{
 }
 
 .encryption-div, 
-.decryption-div{
+.decryption-div,
+.rtmg-container{
     height:60vh;
     min-height: fit-content;
     width:45%;
@@ -166,6 +167,9 @@ select option{
     padding: 5px 20px;
 }
 
+.rtmg-container{
+    width: 95%;
+}
 input,
 textarea{
     padding: 3px 5px ;

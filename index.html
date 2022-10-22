@@ -66,7 +66,7 @@
 
             <br><br>
 
-            <button id="encrypt_btn" class="rte-btn">Encrypt</button>
+            <button id="encrypt_btn" class="rta-btn">Encrypt</button>
 
             <br>
 
@@ -87,7 +87,7 @@
             <textarea name="decrypt" id="decrypt_input" cols="30" rows="10" placeholder="string to decrypt.."></textarea>
             
             <br><br>
-            <button id="decrypt_btn" class="rtd-btn">Decrypt</button>
+            <button id="decrypt_btn" class="rta-btn">Decrypt</button>
 
             <br><br>
             <p id="decryption_result"></p>
@@ -104,6 +104,31 @@
     
         <h1>RTMG<h1>
         <h4>Random Timing Maze Generator</h6>
+
+        <br><br>
+
+        <div class="rtmg-container">
+
+            <!-- user input data below  -->
+            <div class="rtmg-inputs">
+
+                <label for="rtmg_n">Enter n : </label>
+                <input type="number" id="rtmg_n" placeholder="Integer..">
+
+                <br><br>
+
+                <label for="">Show solution </label><input type="checkbox" id="rtmg_solution" value="show"/>
+
+                <br><br>
+
+                <button id="rtmg_btn" class="rta-btn">Generate</button>
+
+            </div>
+
+            <!-- generated maze will be rendered here -->
+            <div class="rtmg-result"></div>
+
+        </div>
     
     </div>
 <!-- END OF RTMG HTML -->

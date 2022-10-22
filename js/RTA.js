@@ -70,7 +70,9 @@ function RTMG(n){
         point.style.height = '20px';
         point.style.aspectRatio = '1/1';
         point.style.border = '1px solid white';
+        point.style.margin= '-1px';
 
+        // randomizing bordering
         let x = Math.round(Math.random()*10);
 
         RTMG_key -= x;
@@ -96,6 +98,8 @@ function RTMG(n){
         }else{
             point.style.borderRight = 'none';
         }
+
+
 
         // appending points in generated maze
         generated_maze.append(point);

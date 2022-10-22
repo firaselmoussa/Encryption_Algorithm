@@ -21,6 +21,7 @@ preview_select.addEventListener('change', ()=>{
 const rtmg_btn = document.getElementById('rtmg_btn');
 const rtmg_n = document.getElementById('rtmg_n');
 const rtmg_solution = document.getElementById('rtmg_solution');
+const rtmg_result = document.getElementById('rtmg_result');
 
 // generate maze
 rtmg_btn.addEventListener('click', ()=>{

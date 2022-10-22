@@ -25,7 +25,10 @@ const rtmg_result = document.getElementById('rtmg_result');
 
 // generate maze
 rtmg_btn.addEventListener('click', ()=>{
-    RTMG(rtmg_n.value);
+    // clearing result container
+    rtmg_result.innerHTML = '';
+    // appending generated maze
+    rtmg_result.append(RTMG(rtmg_n.value));
 })
 
 // RTE & RTD preview

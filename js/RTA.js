@@ -1,7 +1,7 @@
 // Random Timing Algorithms
 ///////////////////////////////////////////////////////////
 
-RTMG(10);
+
 // RANDOM TIMING MAZE GENERATOR
 function RTMG(n){
 
@@ -48,20 +48,25 @@ function RTMG(n){
     // choose enterance points randomly
     let exit_point = index_of_sides_points[Math.round(Math.random() * (index_of_sides_points.length - 0) + 0)];
 
-    // clearing result div
-    rtmg_result.innerHTML = '';
+    // creating maze div
+    let generated_maze = document.createElement('div');
+    generated_maze.classList.add('RTMG_maze');
+
 
     // creating & rendering points
     index_of_all_points.forEach(element => {
         var point = document.createElement('div');
         point.classList.add('RTMG_point');
         point.id = `RTMG_${element}_point`;
-        rtmg_result.append(point);
-        // console.log(point)
+        generated_maze.append(point);
+        
     });
 
+
+    // return result
+    return generated_maze;
 };
-// console.log(rtmg_result)
+
 // RANDOM TIMING ENCRYPTION 
 function RTE(stringToEncrypt){
 

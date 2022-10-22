@@ -19,7 +19,8 @@ preview_select.addEventListener('change', ()=>{
 
 // RTMG preview
 const rtmg_btn = document.getElementById('rtmg_btn');
-const rtmg_n = document.getElementById('rtmg_n');
+const rtmg_h = document.getElementById('rtmg_h');
+const rtmg_w = document.getElementById('rtmg_w');
 const rtmg_solution = document.getElementById('rtmg_solution');
 const rtmg_result = document.getElementById('rtmg_result');
 
@@ -28,7 +29,7 @@ rtmg_btn.addEventListener('click', ()=>{
     // clearing result container
     rtmg_result.innerHTML = '';
     // appending generated maze
-    rtmg_result.append(RTMG(rtmg_n.value));
+    rtmg_result.append(RTMG(rtmg_h.value, rtmg_w.value));
 })
 
 // RTE & RTD preview

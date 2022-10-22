@@ -3,16 +3,19 @@
 
 
 // RANDOM TIMING MAZE GENERATOR
-function RTMG(n){
+function RTMG(height, width){
 
     // using time in milliseconds to randomize the process
     let RTMG_key = Date.now();
 
 
-    n = parseInt(n);
+    // n = parseInt(n);
 
-    // calculating sample set
-    let sample_set = n*n;
+    let h = parseInt(width);
+    let w = parseInt(height);
+
+    // calculating sample set aka 'n'
+    let sample_set = h*w;
 
     // index arrays
     let index_of_all_points = [];
@@ -24,14 +27,14 @@ function RTMG(n){
     }
 
     // inserting TOP & BOTTOM side points indecies
-    for(i = 0; i < n; i++){
+    for(i = 0; i < h; i++){
         index_of_sides_points.push(index_of_all_points.indexOf(i));
         index_of_sides_points.push(index_of_all_points.indexOf(i*10));
         
     }
 
     // inserting LEFT & RIGHT side points indecies
-    for(i = n; i < n*n; i+=10){
+    for(i = 0; i < w; i+=10){
         index_of_sides_points.push(index_of_all_points.indexOf(i));
         index_of_sides_points.push(index_of_all_points.indexOf(i-1));
     }
@@ -53,8 +56,8 @@ function RTMG(n){
     generated_maze.classList.add('RTMG_maze');
 
     // maze css
-    generated_maze.style.gridTemplateColumns = `repeat(${n}, 1fr)`;
-    generated_maze.style.gridTemplateRows = `repeat(${n}, 1fr)`;
+    generated_maze.style.gridTemplateColumns = `repeat(${h}, 1fr)`;
+    generated_maze.style.gridTemplateRows = `repeat(${w}, 1fr)`;
     generated_maze.style.width = 'fit-content';
     generated_maze.style.height = 'fit-content';
     generated_maze.style.display = 'grid';

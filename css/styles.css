@@ -35,6 +35,12 @@
     border-radius: 20px;
 }
 
+.material-icons{
+    position: absolute;
+    margin-top: -2px;
+    margin-left: 10px;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -98,6 +104,25 @@ header ul li{
     color: white;
 }
 
+header ul select{
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+    color:white;
+    font-size: large;
+    padding: 3px 5px;
+    cursor: pointer;
+    
+}
+
+select option{
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
+
 /* preview_section */
 
 #preview_section{
@@ -127,6 +152,7 @@ header ul li{
     justify-content: space-evenly;
     align-items: center;
 }
+
 .encryption-div, 
 .decryption-div{
     height:60vh;

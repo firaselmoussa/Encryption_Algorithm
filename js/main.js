@@ -1,6 +1,10 @@
 // toggling algorithms preview
 const preview_select = document.getElementById('preview_select');
+const rte_rtd_html = document.getElementById('rte_rtd_html');
 // const preview_section = document.getElementById('preview_section');
+
+// initially display RTE & RTD
+rte_rtd_html.style.display = 'block';
 
 preview_select.addEventListener('change', ()=>{
     console.log(preview_select.value);

@@ -131,6 +131,10 @@ select option{
     margin-top: 120px;
 }
 
+.preview-section{
+    display: none;
+}
+
 .rte-btn,
 .rtd-btn{
     padding: 3px 15px;

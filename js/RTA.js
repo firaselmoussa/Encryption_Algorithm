@@ -50,13 +50,13 @@ function RTMG(height, width, shape){
     // inserting possible solution points
     possible_solution_points = index_of_all_points.filter(x => !index_of_sides_points.includes(x));
 
-    // choose enterance points randomly
+    // choose enterance point randomly
     let enterance_point = index_of_sides_points[Math.round(Math.random() * (index_of_sides_points.length - 0) + 0)]; 
 
     // removing enterance point to avoid choosing it as exit point
     index_of_sides_points.splice(index_of_sides_points.indexOf(enterance_point), 1);
 
-    // choose enterance points randomly
+    // choose exit point randomly
     let exit_point = index_of_sides_points[Math.round(Math.random() * (index_of_sides_points.length - 0) + 0)];
 
     // creating maze div
@@ -67,12 +67,16 @@ function RTMG(height, width, shape){
     // starting from enterance point
     // each point have 4 possible next points unless its on a side
     let next_point = enterance_point;
-    let x = 0;
 
 
-    do{
+    // loop till reach exit point
+    while(true){
+
         // pushing points into solution array
         solution_points.push(next_point);
+
+        // removing chosen points to prevent duplication
+        index_of_all_points.splice(index_of_all_points.indexOf(next_point), 1);
 
         // create possible next_points for each previous point
         let temp_points = []
@@ -97,19 +101,24 @@ function RTMG(height, width, shape){
             temp_points.push(next_point - 1);
         } 
 
-        
-    console.log(enterance_point ,temp_points, exit_point)
-
         // determining next point
-        // next_point = Math.floor(Math.round((Math.random() * (index_of_all_points.length- 0 + 1)) + 0));
+        // let index_of_next_point = temp_points[Math.floor(Math.random() * temp_points.length)];
+        next_point = temp_points[Math.floor(Math.random() * temp_points.length)];
+        console.log(next_point);
 
-
-    }while(next_point  != next_point);
+            if( temp_points.includes(exit_point)){
+                console.log(next_point);
+                break;
+            };
+        
+        console.log(enterance_point, next_point, exit_point, index_of_all_points);
+        // break;
+    }
 
     // including exit point to the solution
-    solution_points.push(next_point);
+    solution_points.push(exit_point);
+    console.log(solution_points)
 
-    // console.log(enterance_point ,temp_points, exit_point)
 
     // maze css
     generated_maze.style.gridTemplateColumns = `repeat(${h}, 1fr)`;

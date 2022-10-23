@@ -10,8 +10,8 @@ function RTMG(height, width, shape){
 
     // n = parseInt(n);
 
-    let h = parseInt(width);
-    let w = parseInt(height);
+    let h = parseInt(height);
+    let w = parseInt(width);
 
     // calculating sample set aka 'n'
     let sample_set = h*w;
@@ -19,6 +19,7 @@ function RTMG(height, width, shape){
     // index arrays
     let index_of_all_points = [];
     let index_of_sides_points = [];
+    let possible_solution_points = []
 
     // inserting index of all points  
     for(i = 0; i < sample_set; i++ ){
@@ -26,17 +27,17 @@ function RTMG(height, width, shape){
     }
 
     // inserting TOP & BOTTOM side points indecies
-    for(i = 0; i < h; i++){
-        index_of_sides_points.push(index_of_all_points.indexOf(i));
-        index_of_sides_points.push(index_of_all_points.indexOf(i*10));
-        
+    for(i = 0; i < sample_set; i++){
+        if (i < h) index_of_sides_points.push(index_of_all_points[i]);
+        if (i < h) index_of_sides_points.push(index_of_all_points.at(-i-1));
     }
 
     // inserting LEFT & RIGHT side points indecies
-    for(i = 0; i < w; i+=10){
-        index_of_sides_points.push(index_of_all_points.indexOf(i));
-        index_of_sides_points.push(index_of_all_points.indexOf(i-1));
+    for(i = 0; i < sample_set; i+=h){
+        index_of_sides_points.push(i);
+        index_of_sides_points.push(i+h-1);
     }
+
 
     // sorting array & filtering duplicates
     index_of_sides_points = [...new Set(index_of_sides_points.sort(function(a, b){return a - b}))];

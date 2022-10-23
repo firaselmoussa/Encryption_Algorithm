@@ -102,22 +102,17 @@ function RTMG(height, width, shape){
         } 
 
         // determining next point
-        // let index_of_next_point = temp_points[Math.floor(Math.random() * temp_points.length)];
         next_point = temp_points[Math.floor(Math.random() * temp_points.length)];
         console.log(next_point);
 
             if( temp_points.includes(exit_point)){
-                console.log(next_point);
                 break;
             };
-        
-        console.log(enterance_point, next_point, exit_point, index_of_all_points);
-        // break;
-    }
+
+    };
 
     // including exit point to the solution
     solution_points.push(exit_point);
-    console.log(solution_points)
 
 
     // maze css

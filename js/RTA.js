@@ -3,7 +3,7 @@
 
 
 // RANDOM TIMING MAZE GENERATOR
-function RTMG(height, width, shape){
+function RTMG(width, height, shape){
 
     // using time in milliseconds to randomize the process
     let RTMG_key = Date.now();
@@ -70,54 +70,53 @@ function RTMG(height, width, shape){
     let f = 0;
 
     // loop till reach exit point
-    while(true){
+    // while(true){
 
-        f++;
+    //     f++;
 
-        // pushing points into solution array
-        solution_points.push(next_point);
+    //     // pushing points into solution array
+    //     solution_points.push(next_point);
 
-        // removing chosen points to prevent duplication
-        index_of_all_points.splice(index_of_all_points.indexOf(next_point), 1);
+    //     // removing chosen points to prevent duplication
+    //     index_of_all_points.splice(index_of_all_points.indexOf(next_point), 1);
 
-        // create possible next_points for each previous point
-        let temp_points = []
+    //     // create possible next_points for each previous point
+    //     let temp_points = []
 
 
-        if(index_of_all_points.includes(next_point - h)) temp_points.push(next_point - h);
+    //     if(index_of_all_points.includes(next_point - h)) temp_points.push(next_point - h);
 
-        if(index_of_all_points.includes(next_point + h)) temp_points.push(next_point + h);
+    //     if(index_of_all_points.includes(next_point + h)) temp_points.push(next_point + h);
 
-        if( (index_of_all_points.includes(next_point - 1) &&
-            !index_of_left_points.includes(next_point + 1) &&
-            (next_point + 1) != (h*w) || next_point == 0)){
+    //     if( (index_of_all_points.includes(next_point - 1) &&
+    //         !index_of_left_points.includes(next_point + 1) &&
+    //         (next_point + 1) != (h*w) || next_point == 0)){
             
-            temp_points.push(next_point + 1);
-        } 
+    //         temp_points.push(next_point + 1);
+    //     } 
 
-        if( (index_of_all_points.includes(next_point + 1) &&
-            !index_of_right_points.includes(next_point - 1) &&
-            next_point != 0) ||
-            next_point == (h*w)-1){
+    //     if( (index_of_all_points.includes(next_point + 1) &&
+    //         !index_of_right_points.includes(next_point - 1) &&
+    //         next_point != 0) ||
+    //         next_point == (h*w)-1){
             
-            temp_points.push(next_point - 1);
-        } 
+    //         temp_points.push(next_point - 1);
+    //     } 
 
-        // determining next point
-        next_point = temp_points[Math.floor(Math.random() * temp_points.length)];
+    //     // determining next point
+    //     next_point = temp_points[Math.floor(Math.random() * temp_points.length)];
 
-            if( temp_points.includes(exit_point)){
-                break;
-            }
+    //         if( temp_points.includes(exit_point)){
+    //             break;
+    //         }
 
-    // to force break
-    if(f > index_of_all_points.length) break;
+    // // to force break
+    // if(f > index_of_all_points.length) break;
 
-    };
+    // };
 
     // including exit point to the solution
     solution_points.push(exit_point);
-    console.log(solution_points)
 
 
     // maze css
@@ -137,7 +136,7 @@ function RTMG(height, width, shape){
 
     // creating & rendering points
     index_of_all_points.forEach(element => {
-console.log(element)
+
         let point = document.createElement('div');
         point.classList.add('RTMG_point');
         point.id = `RTMG_${element}_point`;

@@ -32,10 +32,9 @@ rtmg_btn.addEventListener('click', ()=>{
     // appending generated maze
     let maze = RTMG(rtmg_h.value, rtmg_w.value, rtmg_shape.value)
     rtmg_result.append(maze.generated_maze);
-    for(point of maze.maze_solution){
+    // for(point of maze.maze_solution){
         // document.getElementById(`RTMG_${point}_point`).style.background = 'red';
-        console.log(point)
-    };
+    // };
     
 })
 

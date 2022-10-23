@@ -38,9 +38,11 @@ function RTMG(height, width, shape){
         index_of_sides_points.push(i+h-1);
     }
 
-
     // sorting array & filtering duplicates
     index_of_sides_points = [...new Set(index_of_sides_points.sort(function(a, b){return a - b}))];
+
+    // inserting possible solution points
+    possible_solution_points = index_of_all_points.filter(x => !index_of_sides_points.includes(x));
 
     // choose enterance points randomly
     let enterance_point = index_of_sides_points[Math.round(Math.random() * (index_of_sides_points.length - 0) + 0)]; 

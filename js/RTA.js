@@ -19,7 +19,8 @@ function RTMG(height, width, shape){
     // index arrays
     let index_of_all_points = [];
     let index_of_sides_points = [];
-    let possible_solution_points = []
+    let possible_solution_points = [];
+    let solution_points = []
 
     // inserting index of all points  
     for(i = 0; i < sample_set; i++ ){
@@ -56,6 +57,27 @@ function RTMG(height, width, shape){
     // creating maze div
     let generated_maze = document.createElement('div');
     generated_maze.classList.add('RTMG_maze');
+
+    // creating solution path
+    // starting from enterance point
+    // each point have 4 possible next points unless its on a side
+    let next_point = enterance_point;
+    let x = 0;
+
+    do{
+        // pushing points into solution array
+        solution_points.push(next_point);
+
+        // determining next point
+        next_point = Math.floor(Math.round((Math.random() * (index_of_all_points.length- 0 + 1)) + 0));
+
+
+    }while(next_point != exit_point);
+
+    // including exit point to the solution
+    solution_points.push(next_point);
+
+    console.log(enterance_point ,solution_points, exit_point)
 
     // maze css
     generated_maze.style.gridTemplateColumns = `repeat(${h}, 1fr)`;

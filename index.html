@@ -29,9 +29,10 @@
         <ul>
 
                 
-            <select class="form-control">
-                <option value="preview">Preview</option>
-                <option value="rte-and-rtd">RTE & RTD</option>
+            <select class="preview" id="preview_select">
+                <option value="">Preview</option>
+                <option value="rte_rtd_html">RTE & RTD</option>
+                <option value="rtmg_html">RTMG</option>
             </select>
 
             <!-- <a href="#"><li>About</li></a> -->
@@ -44,54 +45,104 @@
 
 
     <!-- Preview section -->
-    <section id="preview_section">
+    <section id="preview_sections_container">
 
-        <!-- <p>RTA is a library of Algorithms that uses Random timestamps formatted in milliseconds as their key.</p> -->
+    <!-- RTE & RTD HTML -->
+    <div class="preview-section" id="rte_rtd_html">
 
-        <h1>RTE & RTD<h1>
-        <h4>Random Timing Encryption & Random Timing Decryption.</h6>
+            <h1>RTE & RTD<h1>
+            <h4>Random Timing Encryption & Random Timing Decryption.</h6>
 
-        <br><br>
-    <!-- ENCRYPTION  CONTAINER-->
-    <div class="rte-rtd-div">
-    <!-- ENCRYPTION -->
-    <div class="encryption-div">
-        <label for="encrypt">Enter a string to encrypt : </label>
+            <br><br>
+        <!-- ENCRYPTION  CONTAINER-->
+        <div class="rte-rtd-div">
+        <!-- ENCRYPTION -->
+        <div class="encryption-div">
+            <label for="encrypt">Enter a string to encrypt : </label>
 
-        <br> <br>
+            <br> <br>
 
-        <textarea name="encrypt" id="encrypt_input" cols="30" rows="10" placeholder="string to encrypt.."></textarea>
+            <textarea name="encrypt" id="encrypt_input" cols="30" rows="10" placeholder="string to encrypt.."></textarea>
 
-        <br><br>
+            <br><br>
 
-        <button id="encrypt_btn" class="rte-btn">Encrypt</button>
+            <button id="encrypt_btn" class="rta-btn">Encrypt</button>
 
-        <br>
+            <br>
 
-        <p id="encryption_key"></p>
+            <p id="encryption_key"></p>
 
-        <p id="encryption_result"></p>
+            <p id="encryption_result"></p>
+        </div>
+
+        <br><br> 
+
+        <!-- DECRYPTION -->
+        <div class="decryption-div">
+            <label for="decrypt">Decrypt (Auto filled) : </label>
+
+            <br><br>
+            <input type="text" id="RTE_key_input" placeholder="RTE_key..">
+            <br><br>
+            <textarea name="decrypt" id="decrypt_input" cols="30" rows="10" placeholder="string to decrypt.."></textarea>
+            
+            <br><br>
+            <button id="decrypt_btn" class="rta-btn">Decrypt</button>
+
+            <br><br>
+            <p id="decryption_result"></p>
+
+        </div>
     </div>
 
-    <br><br> 
-
-    <!-- DECRYPTION -->
-    <div class="decryption-div">
-        <label for="decrypt">Decrypt (Auto filled) : </label>
-
-        <br><br>
-        <input type="text" id="RTE_key_input" placeholder="RTE_key..">
-        <br><br>
-        <textarea name="decrypt" id="decrypt_input" cols="30" rows="10" placeholder="string to decrypt.."></textarea>
-        
-        <br><br>
-        <button id="decrypt_btn" class="rtd-btn">Decrypt</button>
-
-        <br><br>
-        <p id="decryption_result"></p>
-
-    </div>
 </div>
+<!-- END OF RTE & RTD HTML -->
+
+
+    <!-- RTMG HTML -->
+    <div class="preview-section" id="rtmg_html">
+    
+        <h1>RTMG<h1>
+        <h4>Random Timing Maze Generator</h6>
+
+        <br><br>
+
+        <div class="rtmg-container">
+
+            <!-- user input data below  -->
+            <div class="rtmg-inputs">
+
+                <div>
+                    <label for="rtmg_h">Enter Width : </label>
+                    <input type="number" id="rtmg_w" placeholder="Integer..">
+
+                    <label for="rtmg_w">Enter Height : </label>
+                    <input type="number" id="rtmg_h" placeholder="Integer..">
+
+                    <label for="rtmg_shape">Select shape : </label>
+                    <select name="rtmg_shape" id="rtmg_shape">
+                        <option value="rectangle">Rectangle</option>
+                        <option value="triangle">Triangle</option>
+                        <option value="hexagon">Hexagn</option>
+                        <option value="circle">Circle</option>
+                    </select>
+
+                    <label for="">Show solution </label><input type="checkbox" id="rtmg_solution"  />
+                </div>
+                
+                <button id="rtmg_btn" class="rta-btn">Generate</button>
+
+            </div>
+
+            <!-- generated maze will be rendered here -->
+            <div class="rtmg-result" id="rtmg_result"></div>
+
+        </div>
+    
+    </div>
+<!-- END OF RTMG HTML -->
+
+<!-- end of preview container -->
     </section>
 
 

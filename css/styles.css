@@ -19,17 +19,17 @@
     background: rgba(255, 255, 255, 0.08);
 }
 
-.limit-height::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 10px;
 }
 
-.limit-height::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.3);
     border: 1px solid white;
     border-radius: 5px;
 }
 
-.limit-height::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background-color: black;
     border: 1px solid white;
     border-radius: 20px;
@@ -123,16 +123,20 @@ select option{
 }
 
 
-/* preview_section */
+/* preview_sections_containers_container */
 
-#preview_section{
+#preview_sections_container{
     width:90vw;
     margin-left: 5vw;
     margin-top: 120px;
 }
 
-.rte-btn,
-.rtd-btn{
+.preview-section{
+    display: none;
+}
+
+.rta-btn,
+.rta-btn{
     padding: 3px 15px;
     background: black;
     color: white;
@@ -141,8 +145,8 @@ select option{
     cursor: pointer;
 }
 
-.rte-btn:hover,
-.rtd-btn:hover {
+.rta-btn:hover,
+.rta-btn:hover {
     filter: drop-shadow(0 0 1px);
 }
 
@@ -154,7 +158,8 @@ select option{
 }
 
 .encryption-div, 
-.decryption-div{
+.decryption-div,
+.rtmg-container{
     height:60vh;
     min-height: fit-content;
     width:45%;
@@ -162,7 +167,35 @@ select option{
     padding: 5px 20px;
 }
 
+.rtmg-container{
+    width: 95%;
+}
 input,
 textarea{
     padding: 3px 5px ;
+}
+
+/* RTMG CSS */
+.rtmg-inputs{
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-between;
+    width: 100%;
+
+}
+.rtmg-result{
+    width:100%;
+    height:90%;
+    margin-top: 1%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: scroll;
+}
+
+.rtmg-inputs input{
+    width:80px;
+}
+
+.rtmg-inputs select{
+    height:25px
 }

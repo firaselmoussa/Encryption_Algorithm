@@ -1,7 +1,47 @@
+// toggling algorithms preview
+const preview_select = document.getElementById('preview_select');
+const preview_sections = Object.values(document.getElementsByClassName('preview-section'));
+
+// initially display RTE & RTD
+rte_rtd_html.style.display = 'block';
+
+// hiding all
+preview_select.addEventListener('change', ()=>{
+
+    // displaying selected html if option not null
+    if(preview_select.value != ''){
+        preview_sections.forEach(element => {
+            element.style.display = 'none';
+        });
+        document.getElementById(preview_select.value).style.display = 'block';
+    };
+});
+
+// RTMG preview
+const rtmg_btn = document.getElementById('rtmg_btn');
+const rtmg_h = document.getElementById('rtmg_h');
+const rtmg_w = document.getElementById('rtmg_w');
+const rtmg_solution = document.getElementById('rtmg_solution');
+const rtmg_shape = document.getElementById('rtmg_shape');
+const rtmg_result = document.getElementById('rtmg_result');
+
+// generate maze
+rtmg_btn.addEventListener('click', ()=>{
+    // clearing result container
+    rtmg_result.innerHTML = '';
+    // appending generated maze
+    let maze = RTMG(rtmg_h.value, rtmg_w.value, rtmg_shape.value)
+    rtmg_result.append(maze.generated_maze);
+    // for(point of maze.maze_solution){
+        // document.getElementById(`RTMG_${point}_point`).style.background = 'red';
+    // };
+    
+})
+
+// RTE & RTD preview
 const encrypt_btn = document.getElementById('encrypt_btn');
 const encrypt_input = document.getElementById('encrypt_input');
 const encryption_key = document.getElementById('encryption_key');
-
 
 const decrypt_btn = document.getElementById('decrypt_btn');
 const decrypt_input = document.getElementById('decrypt_input');
@@ -23,7 +63,7 @@ encrypt_btn.addEventListener('click', ()=>{
     // 
     decrypt_input.value = encrypted.Encrypted;
     RTE_key_input.value = encrypted.RTE_key;
-})
+});
 
 
 // 
@@ -35,4 +75,4 @@ decrypt_btn.addEventListener('click', ()=>{
     // rendering result
     decryption_result.innerHTML = `Decrypted: <p class="green limit-height">${decrypted} </p>`
 
-})
+});

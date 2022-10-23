@@ -67,10 +67,12 @@ function RTMG(height, width, shape){
     // starting from enterance point
     // each point have 4 possible next points unless its on a side
     let next_point = enterance_point;
-
+    let f = 0;
 
     // loop till reach exit point
     while(true){
+
+        f++;
 
         // pushing points into solution array
         solution_points.push(next_point);
@@ -103,16 +105,19 @@ function RTMG(height, width, shape){
 
         // determining next point
         next_point = temp_points[Math.floor(Math.random() * temp_points.length)];
-        console.log(next_point);
 
             if( temp_points.includes(exit_point)){
                 break;
-            };
+            }
+
+    // to force break
+    if(f > index_of_all_points.length) break;
 
     };
 
     // including exit point to the solution
     solution_points.push(exit_point);
+    console.log(solution_points)
 
 
     // maze css
@@ -132,7 +137,7 @@ function RTMG(height, width, shape){
 
     // creating & rendering points
     index_of_all_points.forEach(element => {
-
+console.log(element)
         let point = document.createElement('div');
         point.classList.add('RTMG_point');
         point.id = `RTMG_${element}_point`;
@@ -169,17 +174,20 @@ function RTMG(height, width, shape){
         }else{
             point.style.borderRight = 'none';
         }
-
-
-
+        
         // appending points in generated maze
         generated_maze.append(point);
         
     });
 
     // return result
-    return generated_maze;
+    let maze = {
+                "generated_maze":generated_maze, "maze_solution":solution_points
+                };
+
+    return maze;
 };
+
 
 // RANDOM TIMING ENCRYPTION 
 function RTE(stringToEncrypt){

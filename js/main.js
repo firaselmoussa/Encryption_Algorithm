@@ -30,7 +30,13 @@ rtmg_btn.addEventListener('click', ()=>{
     // clearing result container
     rtmg_result.innerHTML = '';
     // appending generated maze
-    rtmg_result.append(RTMG(rtmg_h.value, rtmg_w.value, rtmg_shape.value));
+    let maze = RTMG(rtmg_h.value, rtmg_w.value, rtmg_shape.value)
+    rtmg_result.append(maze.generated_maze);
+    for(point of maze.maze_solution){
+        // document.getElementById(`RTMG_${point}_point`).style.background = 'red';
+        console.log(point)
+    };
+    
 })
 
 // RTE & RTD preview

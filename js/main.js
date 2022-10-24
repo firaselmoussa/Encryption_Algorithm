@@ -8,6 +8,13 @@ rte_rtd_html.style.display = 'block';
 // hiding all
 preview_select.addEventListener('change', ()=>{
 
+    // temporary
+    if(preview_select.value == 'REG_link'){
+        console.log('here')
+        window.location = 'https://firaselmoussa.github.io/Random_Equation_Generator/';
+        
+    }else{
+
     // displaying selected html if option not null
     if(preview_select.value != ''){
         preview_sections.forEach(element => {
@@ -15,6 +22,7 @@ preview_select.addEventListener('change', ()=>{
         });
         document.getElementById(preview_select.value).style.display = 'block';
     };
+}//temporary
 });
 
 // RTMG preview

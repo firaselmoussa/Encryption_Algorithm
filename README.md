@@ -25,13 +25,13 @@
 <!-- RTMG -->
 
 <h1>RTMG</h1>
-<h3>Random Timing Maze Generator<a href="https://firaselmoussa.github.io/Random_Timing_Algorithms_RTA/">preview.</a></h3>
+<h3>Random Timing Maze Generator <a href="https://firaselmoussa.github.io/Random_Timing_Algorithms_RTA/">preview.</a></h3>
 
  <img src="assets/rtmg-img.png" alt="rtmg-img" width="100%" >
 
  <br>
 
- <h2>In a 5 * 5 maze a sample path could be determined by the systematic diagram below :</h2>
+ <h3>In a 5 * 5 maze a sample path could be determined by the systematic diagram below :</h3>
 
 <br>
 
